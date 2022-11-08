@@ -1,0 +1,40 @@
+<%- include("./partials/header.ejs") %> 
+
+    <% if (message.length > 0) { %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong><%= message %> </strong> 
+        </div>
+    <% } %>
+    
+    
+    <script>
+      $(".alert").alert();
+    </script>
+
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <h3>REGISTER</h3>
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" >
+                </div>
+                <input type="submit" value="Submit" class="btn btn-sm btn-primary">
+                <br>
+                <small><a href="/login">Login</a> instead</small>
+            </form>
+        </div>
+    </div>
+    
+<%- include("./partials/footer.ejs") %> 
